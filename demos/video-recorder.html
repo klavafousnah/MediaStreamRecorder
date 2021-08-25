@@ -237,34 +237,7 @@
             };
         </script>
 
-        <section class="experiment">
-        <h2 id="how-to-use">How to use?</h2>
-        <pre style="border-left: 2px solid red; margin-left:2em; padding-left: 1em;">
-// cdn.webrtc-experiment.com/MediaStreamRecorder.js
-
-var mediaConstraints = {
-    audio: true,
-    video: true
-};
-
-navigator.getUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
-
-function onMediaSuccess(stream) {
-    var mediaRecorder = new MediaStreamRecorder(stream);
-    mediaRecorder.mimeType = 'video/webm';
-    mediaRecorder.ondataavailable = function (blob) {
-        // POST/PUT "Blob" using FormData/XHR2
-        var blobURL = URL.createObjectURL(blob);
-        document.write('&lt;a href="' + blobURL + '"&gt;' + blobURL + '&lt;/a&gt;');
-    };
-    mediaRecorder.start(3000);
-}
-
-function onMediaError(e) {
-    console.error('media error', e);
-}
-</pre>
-        </section>
+        
 
         <section class="experiment">
             <h2 class="header" id="updates" style="color: red; padding-bottom: .1em;"><a href="https://github.com/streamproc/MediaStreamRecorder/commits/master" target="_blank">Latest Issues</a>
